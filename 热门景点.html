@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        nav {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            font-size: 22px;
+            margin: 0 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        nav a:hover {
+            background: #555;
+        }
+
+        .banner {
+            width: 100%;
+            position: relative;
+            background-image: url(./素材/热门背景.jpg);
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        img {
+            width: 350px;
+            height: 200px;
+            object-fit: cover;
+            opacity: 0.9;
+            transition: transform 2S;
+        }
+
+        img:hover {
+            transform: rotateY(360deg);
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .remen {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .tuijian {
+            text-align: center;
+            margin: 10px;
+        }
+
+        .img-border {
+            border-top: 2px solid #eb420f;
+            border-bottom: 2px dashed #007BFF;
+            border-left: 2px dotted #0fee4b;
+            border-right: 2px double #ee0fee;
+            padding: 3px;
+        }
+
+        .img-border1 {
+            border: 2px double #ee0fee;
+            padding: 3px;
+        }
+
+        .img-border2 {
+
+            border: 2px dashed #007BFF;
+
+            padding: 3px;
+
+        }
+
+        .img-border3
+        {
+            border: 2px solid #eb420f;
+            padding: 3px;
+
+        }
+
+        .remen a {
+            text-decoration: none;
+            color: #333;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .remen a:hover {
+            color: #eb420f;
+        }
+
+        .progress {
+            width: 300px;
+            height: 20px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #007BFF;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        button {
+            border: 0.5px solid #555;
+            background-color: beige;
+        }
+    </style>
+</head>
+
+<body>
+<nav>
+    <ul>
+        <li><a href="./成都旅游攻略.html">首页</a></li>
+        <li><a href="./热门景点.html">热门景点</a></li>
+        <li><a href="./景点详情.html">景点详情</a></li>
+        <li><a href="./联系我们.html">联系我们</a></li>
+    </ul>
+</nav>
+<div class="banner"></div>
+<h2>热门景点</h2>
+
+<div class="progress" id="progressBar">
+    <div class="progress-bar" id="progressBarFill"></div>
+</div>
+<button onclick="toggleProgressBar()">隐藏/显示进度条</button>
+<div class="image-row">
+    <div class="tuijian">
+        <img src="./素材/春熙路.jpg" title="春熙路" class="img-border"/>
+        <p>春熙路</p>
+        <a href="#">了解更多</a>
+    </div>
+    <div class="tuijian">
+        <img src="./素材/武侯祠.jpg" title="武侯祠" class="img-border"/>
+        <p>武侯祠</p>
+        <a href="#">了解更多</a>
+    </div>
+    <div class="tuijian">
+        <img src="./素材/杜甫草堂.jpg" title="杜甫草堂" class="img-border"/>
+        <p>杜甫草堂</p>
+        <a href="#">了解更多</a>
+    </div>
+</div>
+<div class="image-row">
+    <div class="tuijian">
+        <img src="./素材/宽窄巷子.jpg" title="宽窄巷子" class="img-border1"/>
+        <p>宽窄巷子</p>
+        <a href="#">了解更多</a>
+    </div>
+    <div class="tuijian">
+        <img src="./素材/锦里.jpg" title="锦里" class="img-border2"/>
+        <p>锦里</p>
+        <a href="#">了解更多</a>
+    </div>
+    <div class="tuijian">
+        <img src="./素材/人民公园.jpg" title="人民公园" class="img-border3"/>
+        <p>人民公园</p>
+        <a href="#">了解更多</a>
+    </div>
+</div>
+</div>
+
+<script>
+    function toggleProgressBar() {
+        var progressBar = document.getElementById('progressBar');
+        if (progressBar.style.display === 'none') {
+            progressBar.style.display = 'block';
+        } else {
+            progressBar.style.display = 'none';
+        }
+    }
+
+    // 示例：模拟进度更新
+    function updateProgress(percentage) {
+        var progressBarFill = document.getElementById('progressBarFill');
+        progressBarFill.style.width = percentage + '%';
+    }
+
+    // 这里只是示例，实际应用中在合适的地方调用updateProgress函数
+    setTimeout(() => {
+        updateProgress(50);
+    }, 2000);
+
+
+</script>
+</body>
+
+</html>
